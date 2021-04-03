@@ -9,15 +9,55 @@ package thuchanhgithub;
  *
  * @author DELL
  */
-public class LoginForm extends javax.swing.JFrame {
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class LoginForm extends JFrame implements ActionListener {
 
     /**
      * Creates new form LoginForm
      */
-    public LoginForm() {
-        initComponents();
+    Container container = getContentPane();
+    JLabel userLabel = new JLabel("USERNAME");
+    //
+    JTextField userTextField = new JTextField();
+    //
+    JButton loginButton = new JButton("LOGIN");
+    JButton resetButton = new JButton("RESET");
+    JCheckBox showPassword = new JCheckBox("Show Password");
+    LoginForm() {
+        setLayoutManager();
+        setLocationAndSize();
+        addComponentsToContainer();
+        //add actionevent
     }
 
+    public void setLayoutManager() {
+        container.setLayout(null);
+    }
+
+    public void setLocationAndSize() {
+        userLabel.setBounds(50, 150, 100, 30);
+        //
+        userTextField.setBounds(150, 150, 150, 30);
+        //
+        showPassword.setBounds(150, 250, 150, 30);
+        loginButton.setBounds(50, 300, 100, 30);
+        resetButton.setBounds(200, 300, 100, 30);
+
+
+    }
+    
+    public void addComponentsToContainer() {
+        container.add(userLabel);
+        //pass
+        container.add(userTextField);
+        //pass
+        container.add(showPassword);
+        container.add(loginButton);
+        container.add(resetButton);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
